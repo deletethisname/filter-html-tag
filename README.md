@@ -15,14 +15,14 @@ Javascript 过滤 html 标签、属性
 对危险标签、属性的清理，比较科学的的做法是：弄一个实际的解析器，然后把输入的文档 “翻译” 成内存里面的层级文档树，再清除。
 用 javascript 清理标签，也采用这种方案。
 为了最大程度允许用户行为，采用白名单、黑名单过滤，危险的情况主要有：
-■  标签：script，iframe
-■  标签属性：
-■  所有on开头的，
-■  协议类：src=”javascript:”，href=”javascript:”，
-■  href=” javascrip&#116;:alert(1);”，href=”javascript:alert(1);”，
-    href=”&#106;avascrip&#116;&#58;alert(1);”
-■  style名：behavior（这是IE私有属性，可以加载js）
-■  style值：expression，url(javascript:xxxx)
+* ■  标签：script，iframe
+* ■  标签属性：
+* ■  所有on开头的，
+* ■  协议类：src=”javascript:”，href=”javascript:”，
+* ■  href=” javascrip&#116;:alert(1);”，href=”javascript:alert(1);”，
+*    href=”&#106;avascrip&#116;&#58;alert(1);”
+* ■  style名：behavior（这是IE私有属性，可以加载js）
+* ■  style值：expression，url(javascript:xxxx)
 @import “CssStyle.css”;
 等等，
 
